@@ -29,7 +29,7 @@ app.get("/users/:id", async (req, res) => {
         if (dataById[0] != undefined) {
             res.json(dataById)
         } else {
-            res.status(404).send("not foundf")
+            res.status(404).send("not found")
         }
     } catch (err) {
         res.json(err)
