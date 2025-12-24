@@ -42,7 +42,7 @@ app.post("/users", async (req, res) => {
         data = await JSON.parse(data)
         const newId = data[(data.length - 1)].id;
         let user = await req.body
-        user.id = newId + 1
+        user.id = parseInt(newId) + 1
         await data.push(user)
         data = JSON.stringify(data)
         await fs.writeFile("./users.json", data)
